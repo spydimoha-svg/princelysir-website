@@ -1,0 +1,20 @@
+# Secrets — never commit
+.env
+.env.local
+.env.*.local
+
+# Personal documents / PII — keep out of version control
+Resume.pdf
+*.pdf
+
+# Dependencies
+node_modules/
+
+# Screenshots are disposable / regenerated
+temporary screenshots/*
+!temporary screenshots/.gitkeep
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log

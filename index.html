@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <!-- CSP fallback for static hosting (server also sends this as a header). -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'none'; object-src 'none'"
+    />
+    <title>Princely Samuel — Director of Training &amp; Placement</title>
+    <meta
+      name="description"
+      content="Princely Samuel — corporate communication and soft-skills trainer, Director of Training &amp; Placement at Loyola College, Chennai. Twelve years turning communication into careers."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Compiled Tailwind (replaces the dev-only Play CDN). Rebuild: npm run build:css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+
+    <style>
+      :root { color-scheme: light; }
+      html { scroll-behavior: smooth; }
+      body {
+        background-color: #F7F3EA;
+        background-image:
+          radial-gradient(70% 50% at 95% -8%, rgba(28,110,102,.07), transparent 55%),
+          radial-gradient(60% 45% at -5% 3%, rgba(189,146,47,.05), transparent 60%);
+        background-attachment: fixed;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0.04;
+        mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+      body > * { position: relative; z-index: 1; }
+      ::selection { background: rgba(28,110,102,.18); color: #14534D; }
+
+      .eyebrow {
+        font-family: "Spline Sans Mono", monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.24em;
+        font-size: 0.7rem;
+        color: #1C6E66;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+      }
+      .eyebrow::before { content: ""; width: 1.5rem; height: 1px; background: #1C6E66; opacity: 0.6; }
+
+      /* Signature: hand-drawn teal emphasis underline */
+      .accent { position: relative; white-space: nowrap; }
+      .accent .ul { position: absolute; left: -1%; bottom: -0.16em; width: 102%; height: 0.5em; overflow: visible; }
+      .accent .ul path {
+        fill: none; stroke: #1C6E66; stroke-width: 5; stroke-linecap: round;
+        stroke-dasharray: 640; stroke-dashoffset: 640;
+        animation: draw 1.2s 0.5s cubic-bezier(0.62, 0.01, 0.2, 1) forwards;
+      }
+      @keyframes draw { to { stroke-dashoffset: 0; } }
+
+      .link-emph {
+        background-image: linear-gradient(#1C6E66, #1C6E66);
+        background-size: 0% 1.5px; background-position: 0 100%; background-repeat: no-repeat;
+        transition: background-size 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), color 0.25s ease;
+      }
+      .link-emph:hover, .link-emph:focus-visible { background-size: 100% 1.5px; color: #14534D; }
+
+      /* Big contact links — underline sweeps in from left */
+      .bigline {
+        background-image: linear-gradient(#1C6E66, #1C6E66);
+        background-size: 0% 2px; background-position: 0 100%; background-repeat: no-repeat;
+        transition: background-size 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), color 0.3s ease;
+      }
+      .bigline:hover, .bigline:focus-visible { background-size: 100% 2px; color: #14534D; }
+
+      /* Drop cap — literary nod */
+      .dropcap::first-letter {
+        font-family: "Fraunces", serif; font-weight: 600; font-size: 3.6em;
+        line-height: 0.78; float: left; margin: 0.04em 0.1em 0 0; color: #1C6E66;
+      }
+
+      /* Editorial expertise rows */
+      .entry { transition: color 0.3s ease; }
+      .entry .marker { transition: width 0.4s cubic-bezier(0.2, 0.7, 0.2, 1); }
+      .entry:hover .title { color: #1C6E66; }
+      .entry:hover .marker { width: 2.5rem; }
+
+      .js .reveal {
+        opacity: 0; transform: translateY(20px);
+        transition: opacity 0.85s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.85s cubic-bezier(0.2, 0.7, 0.2, 1);
+        will-change: opacity, transform;
+      }
+      .js .reveal.in { opacity: 1; transform: none; }
+
+      .marquee { display: flex; width: max-content; animation: scroll 40s linear infinite; }
+      .marquee-wrap:hover .marquee { animation-play-state: paused; }
+      @keyframes scroll { to { transform: translateX(-50%); } }
+
+      .vlabel { writing-mode: vertical-rl; text-orientation: mixed; }
+      .photo { filter: saturate(0.97) contrast(1.02); }
+
+      a:focus-visible, button:focus-visible { outline: 2px solid #1C6E66; outline-offset: 3px; border-radius: 3px; }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .accent .ul path { animation: none; stroke-dashoffset: 0; }
+        .reveal { opacity: 1; transform: none; transition: none; }
+        .marquee { animation: none; }
+        *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+      }
+    </style>
+  </head>
+
+  <body class="font-sans text-body antialiased">
+    <!-- ───────────── NAV ───────────── -->
+    <header id="nav" class="fixed inset-x-0 top-0 z-50 transition-colors duration-500">
+      <nav class="mx-auto flex max-w-[80rem] items-center justify-between px-6 py-5 md:px-10">
+        <a href="#top" class="font-display text-lg font-semibold tracking-tight text-ink" aria-label="Princely Samuel — home">
+          Princely&nbsp;Samuel
+        </a>
+        <div class="hidden items-center gap-9 md:flex">
+          <a href="#about" class="link-emph text-sm text-body hover:text-ink">About</a>
+          <a href="#experience" class="link-emph text-sm text-body hover:text-ink">Experience</a>
+          <a href="#expertise" class="link-emph text-sm text-body hover:text-ink">Expertise</a>
+          <a href="#impact" class="link-emph text-sm text-body hover:text-ink">Impact</a>
+          <a href="#contact" class="link-emph text-sm font-medium text-teal">Enquire →</a>
+        </div>
+        <button id="menu-btn" class="md:hidden text-ink" aria-label="Open menu" aria-expanded="false">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" /></svg>
+        </button>
+      </nav>
+      <div id="mobile-menu" class="hidden border-y border-line bg-paper/95 backdrop-blur md:hidden">
+        <div class="mx-auto flex max-w-[80rem] flex-col gap-1 px-6 py-4">
+          <a href="#about" class="py-2 text-body hover:text-ink">About</a>
+          <a href="#experience" class="py-2 text-body hover:text-ink">Experience</a>
+          <a href="#expertise" class="py-2 text-body hover:text-ink">Expertise</a>
+          <a href="#impact" class="py-2 text-body hover:text-ink">Impact</a>
+          <a href="#contact" class="py-2 font-semibold text-teal">Enquire →</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- ───────────── HERO ───────────── -->
+      <section class="relative overflow-hidden">
+        <div class="mx-auto grid max-w-[80rem] grid-cols-1 items-stretch gap-10 px-6 pt-32 md:px-10 lg:grid-cols-12 lg:gap-6 lg:pt-36">
+          <div class="lg:col-span-7 lg:pr-6 lg:pb-24">
+            <p class="eyebrow reveal">Corporate Communication · Soft Skills · Placement</p>
+            <h1
+              class="reveal mt-8 font-display font-semibold leading-[0.98] tracking-[-0.035em] text-ink"
+              style="font-size: clamp(2.8rem, 6.4vw, 5.1rem); transition-delay: 80ms"
+            >
+              Communication is the difference between a degree and an
+              <span class="accent"
+                >offer&nbsp;letter.<svg class="ul" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 12 C 70 3, 130 4, 180 8 S 270 15, 297 5" /></svg></span>
+            </h1>
+            <p class="reveal mt-9 max-w-lg text-[1.08rem] leading-[1.75] text-body" style="transition-delay: 160ms">
+              I'm <span class="font-medium text-ink">Princely Samuel</span> — Director of Training &amp; Placement at
+              Loyola College, Chennai. For twelve years I've turned communication skill into careers: training teams at
+              Infosys, Accenture and HCL, and preparing first-generation learners to walk into Goldman Sachs, McKinsey
+              and the Big Four.
+            </p>
+            <div class="reveal mt-10 flex flex-wrap items-center gap-7" style="transition-delay: 240ms">
+              <a href="#contact" class="rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-paper shadow-photo transition-all duration-300 hover:-translate-y-0.5 hover:bg-tealdark active:translate-y-0">Start an enquiry</a>
+              <a href="#experience" class="link-emph text-sm font-semibold text-ink">Explore the work →</a>
+            </div>
+          </div>
+
+          <!-- Cover photo — tall, bleeds to the top, with a vertical label -->
+          <div class="reveal relative lg:col-span-5" style="transition-delay: 200ms">
+            <div class="relative h-[26rem] overflow-hidden rounded-xl shadow-photo sm:h-[34rem] lg:absolute lg:inset-y-0 lg:left-0 lg:right-[calc(50%-50vw)] lg:h-auto lg:rounded-l-2xl lg:rounded-r-none">
+              <img src="brand_assets/princely-cover.jpg" alt="Princely Samuel speaking at a session" class="photo absolute inset-0 h-full w-full object-cover" style="object-position: 50% 34%" />
+              <div class="pointer-events-none absolute inset-0 bg-teal/5 mix-blend-multiply"></div>
+              <div class="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/55 to-transparent"></div>
+              <p class="absolute bottom-5 left-6 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-paper/90">
+                Director, Training &amp; Placement — Loyola College, Chennai
+              </p>
+              <span class="vlabel absolute right-4 top-6 hidden font-mono text-[0.6rem] uppercase tracking-[0.3em] text-paper/70 lg:block">Chennai · India</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── CLIENTS (ruled running line, no box) ───────────── -->
+      <section class="mt-16 border-y border-line py-6 lg:mt-24">
+        <div class="mx-auto flex max-w-[80rem] flex-col gap-4 px-6 md:px-10">
+          <p class="font-mono text-[0.64rem] uppercase tracking-[0.26em] text-muted">Trained teams &amp; placed talent at</p>
+          <div class="marquee-wrap relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_6%,#000_94%,transparent)]">
+            <div class="marquee items-center gap-10 pr-10 font-display text-xl text-ink/70">
+              <span class="transition-colors hover:text-teal">Goldman Sachs</span><span class="text-teal/40">·</span>
+              <span class="transition-colors hover:text-teal">McKinsey &amp; Company</span><span class="text-teal/40">·</span>
+              <span class="transition-colors hover:text-teal">Deloitte</span><span class="text-teal/40">·</span>
+              <span class="transition-colors hover:text-teal">KPMG</span><span class="text-teal/40">·</span>
+              <span class="transition-colors hover:text-teal">EY</span><span class="text-teal/40">·</span>
+              <span class="transition-colors hover:text-teal">PwC</span><span class="text-teal/40">·</span>
+              <span class="transition-colors hover:text-teal">DE Shaw</span><span class="text-teal/40">·</span>
+              <span class="transition-colors hover:text-teal">Barclays</span><span class="text-teal/40">·</span>
+              <span class="transition-colors hover:text-teal">Infosys</span><span class="text-teal/40">·</span>
+              <span class="transition-colors hover:text-teal">Accenture</span><span class="text-teal/40">·</span>
+              <span class="transition-colors hover:text-teal">HCL</span><span class="text-teal/40">·</span>
+              <span class="transition-colors hover:text-teal">Capgemini</span><span class="text-teal/40">·</span>
+              <span class="transition-colors hover:text-teal" aria-hidden="true">Goldman Sachs</span><span class="text-teal/40" aria-hidden="true">·</span>
+              <span class="transition-colors hover:text-teal" aria-hidden="true">McKinsey &amp; Company</span><span class="text-teal/40" aria-hidden="true">·</span>
+              <span class="transition-colors hover:text-teal" aria-hidden="true">Deloitte</span><span class="text-teal/40" aria-hidden="true">·</span>
+              <span class="transition-colors hover:text-teal" aria-hidden="true">KPMG</span><span class="text-teal/40" aria-hidden="true">·</span>
+              <span class="transition-colors hover:text-teal" aria-hidden="true">EY</span><span class="text-teal/40" aria-hidden="true">·</span>
+              <span class="transition-colors hover:text-teal" aria-hidden="true">PwC</span><span class="text-teal/40" aria-hidden="true">·</span>
+              <span class="transition-colors hover:text-teal" aria-hidden="true">DE Shaw</span><span class="text-teal/40" aria-hidden="true">·</span>
+              <span class="transition-colors hover:text-teal" aria-hidden="true">Barclays</span><span class="text-teal/40" aria-hidden="true">·</span>
+              <span class="transition-colors hover:text-teal" aria-hidden="true">Infosys</span><span class="text-teal/40" aria-hidden="true">·</span>
+              <span class="transition-colors hover:text-teal" aria-hidden="true">Accenture</span><span class="text-teal/40" aria-hidden="true">·</span>
+              <span class="transition-colors hover:text-teal" aria-hidden="true">HCL</span><span class="text-teal/40" aria-hidden="true">·</span>
+              <span class="transition-colors hover:text-teal" aria-hidden="true">Capgemini</span><span class="text-teal/40" aria-hidden="true">·</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── EXPERIENCE (highlights — no timeline, no boxes) ───────────── -->
+      <section id="experience" class="mx-auto max-w-[80rem] scroll-mt-24 px-6 py-24 md:px-10 md:py-32">
+        <div class="grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <div class="lg:col-span-5">
+            <p class="eyebrow reveal">Experience</p>
+            <h2 class="reveal mt-6 font-display text-4xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink sm:text-5xl" style="transition-delay: 80ms">
+              Twelve years turning communication into careers.
+            </h2>
+          </div>
+          <div class="reveal lg:col-span-7 lg:pt-2" style="transition-delay: 160ms">
+            <p class="max-w-2xl text-[1.12rem] leading-[1.85] text-body">
+              Nine of those years as a freelance corporate English and soft-skills trainer. Two leading Learning &amp;
+              Development at <span class="font-medium text-ink">Infosys</span> — training teams at Infosys, Accenture,
+              HCL and Capgemini. Today, <span class="font-medium text-ink">Director of Training &amp; Placement at Loyola
+              College, Chennai</span>, and a consultant trainer for ventures like Agnikul Cosmos — verbal-ability coach
+              for GRE, TOEFL, CAT and MAT, and keynote speaker for IEEE Young Professionals.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stat line: big numerals split by hairline rules -->
+        <div class="reveal mt-16 grid grid-cols-2 gap-y-10 border-t border-line pt-12 sm:grid-cols-4 sm:divide-x sm:divide-line">
+          <div class="sm:px-8 sm:first:pl-0">
+            <p class="font-display text-[3.4rem] font-semibold leading-none tracking-tight text-ink">12<span class="text-teal">+</span></p>
+            <p class="mt-3 font-mono text-[0.64rem] uppercase tracking-[0.18em] text-muted">Years training<br />&amp; placement</p>
+          </div>
+          <div class="sm:px-8">
+            <p class="font-display text-[3.4rem] font-semibold leading-none tracking-tight text-ink">9</p>
+            <p class="mt-3 font-mono text-[0.64rem] uppercase tracking-[0.18em] text-muted">Years freelance<br />soft-skills training</p>
+          </div>
+          <div class="sm:px-8">
+            <p class="font-display text-[3.4rem] font-semibold leading-none tracking-tight text-ink">120<span class="text-teal">+</span></p>
+            <p class="mt-3 font-mono text-[0.64rem] uppercase tracking-[0.18em] text-muted">Recruiting<br />companies</p>
+          </div>
+          <div class="sm:px-8">
+            <p class="font-display text-[3.4rem] font-semibold leading-none tracking-tight text-ink">60<span class="text-teal">+</span></p>
+            <p class="mt-3 font-mono text-[0.64rem] uppercase tracking-[0.18em] text-muted">HR partners<br />via NHRD</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── ABOUT (podium photo + drop-capped essay) ───────────── -->
+      <section id="about" class="scroll-mt-24 border-t border-line bg-paper2/40">
+        <div class="mx-auto grid max-w-[80rem] items-center gap-12 px-6 py-24 md:px-10 md:py-32 lg:grid-cols-12 lg:gap-16">
+          <div class="reveal relative order-2 lg:order-1 lg:col-span-5">
+            <div class="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-photo">
+              <img src="brand_assets/princely-speech.jpg" alt="Princely Samuel addressing an audience from the Loyola College podium" class="photo absolute inset-0 h-full w-full object-cover" style="object-position: 40% 32%" />
+              <div class="pointer-events-none absolute inset-0 bg-teal/5 mix-blend-multiply"></div>
+            </div>
+            <p class="mt-4 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-muted">At the Loyola College podium</p>
+          </div>
+
+          <div class="order-1 lg:order-2 lg:col-span-7">
+            <p class="eyebrow reveal">About</p>
+            <h2 class="reveal mt-6 font-display text-4xl font-semibold leading-tight tracking-[-0.02em] text-ink sm:text-5xl" style="transition-delay: 80ms">
+              A scholar of language, fluent in industry.
+            </h2>
+            <p class="dropcap reveal mt-8 max-w-2xl text-[1.1rem] leading-[1.85] text-body" style="transition-delay: 160ms">
+              Princely Samuel began in English literature — earning an M.Phil from The American College with his
+              university's best-on-record score — and carried that command of language into the corporate world. Today
+              he is Dale Carnegie– and Berlitz–certified, and teaches in both English and German.
+            </p>
+            <p class="reveal mt-5 max-w-2xl text-[1.1rem] leading-[1.85] text-body" style="transition-delay: 220ms">
+              He has keynoted for IEEE Young Professionals and spent over a decade doing one thing well: turning the way
+              people speak into the careers they deserve.
+            </p>
+            <div class="reveal mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-muted" style="transition-delay: 280ms">
+              <span class="text-teal">Dale Carnegie</span><span class="text-line">/</span>
+              <span class="text-teal">Berlitz</span><span class="text-line">/</span>
+              <span class="text-teal">Learnship Global English</span><span class="text-line">/</span>
+              <span class="text-teal">NHRD Chennai</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── EXPERTISE (designed cards — icon, big title, readable copy, teal pills) ───────────── -->
+      <section id="expertise" class="mx-auto max-w-[80rem] scroll-mt-24 px-6 py-24 md:px-10 md:py-32">
+        <div class="reveal max-w-2xl">
+          <p class="eyebrow">Expertise</p>
+          <h2 class="mt-6 font-display text-4xl font-semibold leading-tight tracking-[-0.02em] text-ink sm:text-5xl">What I'm brought in to do.</h2>
+          <p class="mt-5 text-[1.05rem] leading-[1.7] text-body">Four ways corporates, campuses and institutions put me to work.</p>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-2">
+          <article class="reveal group rounded-3xl border border-line bg-card p-8 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-teal/40 hover:shadow-photo md:p-10">
+            <span class="mb-7 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-teal/10 text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-paper">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
+            </span>
+            <h3 class="font-display text-[1.7rem] font-semibold leading-tight text-ink">Corporate English &amp; Communication</h3>
+            <p class="mt-4 text-[1.05rem] leading-[1.75] text-body">Accent-neutral fluency, business writing and on-camera presence — for new hires and senior teams alike.</p>
+            <div class="mt-7 flex flex-wrap gap-2.5">
+              <span class="rounded-full bg-teal/10 px-3.5 py-1.5 text-[0.8rem] font-medium text-tealdark">Communication</span>
+              <span class="rounded-full bg-teal/10 px-3.5 py-1.5 text-[0.8rem] font-medium text-tealdark">Business English</span>
+              <span class="rounded-full bg-teal/10 px-3.5 py-1.5 text-[0.8rem] font-medium text-tealdark">Presentation</span>
+            </div>
+          </article>
+
+          <article class="reveal group rounded-3xl border border-line bg-card p-8 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-teal/40 hover:shadow-photo md:p-10" style="transition-delay: 80ms">
+            <span class="mb-7 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-teal/10 text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-paper">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+            </span>
+            <h3 class="font-display text-[1.7rem] font-semibold leading-tight text-ink">Soft Skills &amp; Leadership</h3>
+            <p class="mt-4 text-[1.05rem] leading-[1.75] text-body">Behavioural training and leadership development — from first-year campus cohorts to high-growth teams at Agnikul Cosmos.</p>
+            <div class="mt-7 flex flex-wrap gap-2.5">
+              <span class="rounded-full bg-teal/10 px-3.5 py-1.5 text-[0.8rem] font-medium text-tealdark">Leadership</span>
+              <span class="rounded-full bg-teal/10 px-3.5 py-1.5 text-[0.8rem] font-medium text-tealdark">Team-building</span>
+              <span class="rounded-full bg-teal/10 px-3.5 py-1.5 text-[0.8rem] font-medium text-tealdark">Behavioural</span>
+            </div>
+          </article>
+
+          <article class="reveal group rounded-3xl border border-line bg-card p-8 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-teal/40 hover:shadow-photo md:p-10" style="transition-delay: 160ms">
+            <span class="mb-7 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-teal/10 text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-paper">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
+            </span>
+            <h3 class="font-display text-[1.7rem] font-semibold leading-tight text-ink">Placement &amp; Verbal Ability</h3>
+            <p class="mt-4 text-[1.05rem] leading-[1.75] text-body">Aptitude and verbal coaching that gets candidates through the tests that gatekeep careers and admissions.</p>
+            <div class="mt-7 flex flex-wrap gap-2.5">
+              <span class="rounded-full bg-teal/10 px-3.5 py-1.5 text-[0.8rem] font-medium text-tealdark">GRE</span>
+              <span class="rounded-full bg-teal/10 px-3.5 py-1.5 text-[0.8rem] font-medium text-tealdark">TOEFL</span>
+              <span class="rounded-full bg-teal/10 px-3.5 py-1.5 text-[0.8rem] font-medium text-tealdark">CAT</span>
+              <span class="rounded-full bg-teal/10 px-3.5 py-1.5 text-[0.8rem] font-medium text-tealdark">MAT</span>
+            </div>
+          </article>
+
+          <article class="reveal group rounded-3xl border border-line bg-card p-8 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-teal/40 hover:shadow-photo md:p-10" style="transition-delay: 240ms">
+            <span class="mb-7 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-teal/10 text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-paper">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" /><path d="M19 10v2a7 7 0 0 1-14 0v-2" /><line x1="12" y1="19" x2="12" y2="23" /><line x1="8" y1="23" x2="16" y2="23" /></svg>
+            </span>
+            <h3 class="font-display text-[1.7rem] font-semibold leading-tight text-ink">Keynotes &amp; Faculty Development</h3>
+            <p class="mt-4 text-[1.05rem] leading-[1.75] text-body">Keynotes and faculty-development programmes — including IEEE Young Professionals, Madras Section.</p>
+            <div class="mt-7 flex flex-wrap gap-2.5">
+              <span class="rounded-full bg-teal/10 px-3.5 py-1.5 text-[0.8rem] font-medium text-tealdark">Keynote</span>
+              <span class="rounded-full bg-teal/10 px-3.5 py-1.5 text-[0.8rem] font-medium text-tealdark">IEEE</span>
+              <span class="rounded-full bg-teal/10 px-3.5 py-1.5 text-[0.8rem] font-medium text-tealdark">FDP</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ───────────── IMPACT (full-bleed photo + giant pull-quote) ───────────── -->
+      <section id="impact" class="scroll-mt-24 border-y border-line bg-paper2/50 py-24 md:py-32">
+        <div class="mx-auto grid max-w-[80rem] items-center gap-14 px-6 md:px-10 lg:grid-cols-12 lg:gap-16">
+          <div class="reveal relative lg:col-span-6">
+            <div class="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-photo">
+              <img src="brand_assets/princely-training.jpg" alt="Princely Samuel training a full room of students" class="photo absolute inset-0 h-full w-full object-cover" style="object-position: 58% 48%" />
+              <div class="pointer-events-none absolute inset-0 bg-teal/8 mix-blend-multiply"></div>
+            </div>
+          </div>
+          <div class="lg:col-span-6">
+            <p class="eyebrow reveal">Impact</p>
+            <blockquote class="reveal mt-7 font-display font-medium leading-[1.12] tracking-[-0.02em] text-ink" style="font-size: clamp(2rem, 3.6vw, 3rem); transition-delay: 80ms">
+              A degree gets you the interview. The way you speak gets you the <span class="text-teal">job.</span>
+            </blockquote>
+            <p class="reveal mt-8 max-w-xl text-[1.08rem] leading-[1.8] text-body" style="transition-delay: 160ms">
+              Much of Princely's work is with students who are the first in their family to enter a corporate career.
+              Through the <span class="font-medium text-ink">Maatram Foundation</span> he places underprivileged and
+              first-generation students into reputed companies; through the <span class="font-medium text-ink">SPURS
+              initiative at SSN</span>, since 2017, he has equipped rural children with communication skills before their
+              classes even begin.
+            </p>
+            <div class="reveal mt-9 flex flex-wrap gap-x-8 gap-y-3 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-muted" style="transition-delay: 240ms">
+              <span><span class="text-teal">Maatram Foundation</span> — Placement Director</span>
+              <span><span class="text-teal">SPURS · SSN</span> — since 2017</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── CREDENTIALS (icon-headed cards, larger type) ───────────── -->
+      <section class="mx-auto max-w-[80rem] px-6 py-24 md:px-10 md:py-32">
+        <div class="reveal max-w-2xl">
+          <p class="eyebrow">Credentials</p>
+          <h2 class="mt-6 font-display text-4xl font-semibold leading-tight tracking-[-0.02em] text-ink sm:text-5xl">Certified, published, recognised.</h2>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-3">
+          <!-- Certifications -->
+          <div class="reveal rounded-3xl border border-line bg-card p-8 shadow-card">
+            <div class="flex items-center gap-3.5">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-teal/10 text-teal">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6" /><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" /></svg>
+              </span>
+              <h3 class="font-display text-xl font-semibold text-ink">Certifications</h3>
+            </div>
+            <ul class="mt-5">
+              <li class="border-t border-line py-3.5 text-[1.02rem] text-ink">Dale Carnegie <span class="text-body">— Certified Facilitator</span></li>
+              <li class="border-t border-line py-3.5 text-[1.02rem] text-ink">Berlitz <span class="text-body">— Culture Practitioner</span></li>
+              <li class="border-t border-line py-3.5 text-[1.02rem] text-ink">Learnship <span class="text-body">— Global English Trainer</span></li>
+              <li class="border-t border-line py-3.5 text-[1.02rem] text-ink">German <span class="text-body">— Madurai Kamaraj University</span></li>
+            </ul>
+          </div>
+
+          <!-- Education -->
+          <div class="reveal rounded-3xl border border-line bg-card p-8 shadow-card" style="transition-delay: 90ms">
+            <div class="flex items-center gap-3.5">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-teal/10 text-teal">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.91a2 2 0 0 0 1.66 0z" /><path d="M22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" /></svg>
+              </span>
+              <h3 class="font-display text-xl font-semibold text-ink">Education</h3>
+            </div>
+            <ul class="mt-5">
+              <li class="border-t border-line py-4">
+                <p class="text-[1.02rem] font-medium text-ink">M.Phil — English Language &amp; Literature</p>
+                <p class="mt-1.5 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted">American College / MKU · 2012 · Best Record</p>
+              </li>
+              <li class="border-t border-line py-4">
+                <p class="text-[1.02rem] font-medium text-ink">M.A. — English Language &amp; Literature</p>
+                <p class="mt-1.5 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted">American College / MKU · 2011</p>
+              </li>
+              <li class="border-t border-line py-4">
+                <p class="text-[1.02rem] font-medium text-ink">B.A. — English Literature</p>
+                <p class="mt-1.5 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted">American College / MKU · 2009</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Publications -->
+          <div class="reveal rounded-3xl border border-line bg-card p-8 shadow-card" style="transition-delay: 180ms">
+            <div class="flex items-center gap-3.5">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-teal/10 text-teal">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
+              </span>
+              <h3 class="font-display text-xl font-semibold text-ink">Publications</h3>
+            </div>
+            <ul class="mt-5">
+              <li class="border-t border-line py-4">
+                <p class="text-[1.02rem] font-medium text-ink">“English Curriculum Crisis in Tamil Nadu”</p>
+                <p class="mt-1.5 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted">The English Class Room, Vol. 13 · RIE Bangalore</p>
+              </li>
+              <li class="border-t border-line py-4">
+                <p class="text-[1.02rem] font-medium text-ink">7 research papers (ISBN)</p>
+                <p class="mt-1.5 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted">Teaching methodologies &amp; literature</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── CONTACT (big ruled text links, no boxes) ───────────── -->
+      <section id="contact" class="scroll-mt-24 border-t border-line bg-paper2/40">
+        <div class="mx-auto max-w-[80rem] px-6 py-24 md:px-10 md:py-32">
+          <div class="grid gap-10 lg:grid-cols-12 lg:gap-12">
+            <div class="reveal lg:col-span-5">
+              <p class="eyebrow">Contact</p>
+              <h2 class="mt-6 font-display text-5xl font-semibold leading-[1.02] tracking-[-0.025em] text-ink sm:text-6xl">Let's get your people ready.</h2>
+              <p class="mt-7 max-w-md leading-[1.8] text-body">Corporate training, campus placement programmes, keynotes and faculty development — across Chennai and beyond, in English and German.</p>
+            </div>
+
+            <div class="reveal lg:col-span-7 lg:pt-3" style="transition-delay: 120ms">
+              <a href="mailto:princelyofficial@gmail.com" class="group flex items-baseline justify-between border-t border-ink/15 py-7">
+                <span class="bigline font-display text-2xl text-ink sm:text-3xl">princelyofficial@gmail.com</span>
+                <span class="ml-4 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-muted">Email</span>
+              </a>
+              <a href="tel:+919500046731" class="group flex items-baseline justify-between border-t border-line py-7">
+                <span class="bigline font-display text-2xl text-ink sm:text-3xl">+91 95000 46731</span>
+                <span class="ml-4 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-muted">Phone</span>
+              </a>
+              <a href="https://in.linkedin.com/in/princely-samuel-424729172" target="_blank" rel="noopener noreferrer" class="group flex items-baseline justify-between border-y border-line py-7">
+                <span class="bigline font-display text-2xl text-ink sm:text-3xl">/princely-samuel</span>
+                <span class="ml-4 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-muted">LinkedIn ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mx-auto flex max-w-[80rem] flex-col items-center justify-between gap-4 px-6 py-10 md:flex-row md:px-10">
+      <p class="font-display text-sm text-body">Princely Samuel — Director of Training &amp; Placement, Chennai</p>
+      <p class="font-mono text-[0.64rem] uppercase tracking-[0.2em] text-muted">© 2026</p>
+      <a href="#top" class="link-emph font-mono text-[0.64rem] uppercase tracking-[0.2em] text-body hover:text-teal">Back to top ↑</a>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        const open = mobileMenu.classList.toggle("hidden") === false;
+        menuBtn.setAttribute("aria-expanded", String(open));
+      });
+      mobileMenu.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          menuBtn.setAttribute("aria-expanded", "false");
+        })
+      );
+
+      const nav = document.getElementById("nav");
+      const onScroll = () => {
+        if (window.scrollY > 24) nav.classList.add("bg-paper/85", "backdrop-blur", "border-b", "border-line");
+        else nav.classList.remove("bg-paper/85", "backdrop-blur", "border-b", "border-line");
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const reveals = document.querySelectorAll(".reveal");
+      if (reduce || !("IntersectionObserver" in window)) {
+        reveals.forEach((el) => el.classList.add("in"));
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) { entry.target.classList.add("in"); io.unobserve(entry.target); }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+        );
+        reveals.forEach((el) => io.observe(el));
+      }
+      window.addEventListener("load", () => reveals.forEach((el) => el.classList.add("in")));
+    </script>
+  </body>
+</html>

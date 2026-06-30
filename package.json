@@ -1,0 +1,19 @@
+{
+  "name": "princely-sir-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Frontend website project — built under the frontend-design rules in CLAUDE.md.",
+  "scripts": {
+    "serve": "node serve.mjs",
+    "screenshot": "node screenshot.mjs",
+    "build:css": "tailwindcss -c ./tailwind.config.js -i ./src/input.css -o ./styles.css --minify",
+    "watch:css": "tailwindcss -c ./tailwind.config.js -i ./src/input.css -o ./styles.css --watch"
+  },
+  "dependencies": {
+    "puppeteer": "^25.2.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
